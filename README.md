@@ -1,1 +1,2 @@
 # teamC
+<head>'これはテストです'</head>
