@@ -1,3 +1,14 @@
+.msr_h102 {
+  background: #1B73BA;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-size: 30px;
+  margin-bottom: 30px;
+  padding: 8px 10px;
+  position: relative;
+  width: 100%;
+}
+
 .msr_table01 {
     border-collapse: collapse;
     border-left: 1px solid #AAAAAA;

@@ -1,0 +1,92 @@
+.msr_h103 {
+  background: #1B73BA;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-size: 30px;
+  margin-bottom: 30px;
+  padding: 8px 10px;
+  position: relative;
+  width: 100%;
+}
+
+.memo {
+  padding-bottom: 20px;
+  width: 460px;
+}
+.memo  label {
+  display: block;
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+.memo input[type=text] {
+  border: 1px solid #1B73BA;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  color: #333;
+  font-size: 13px;
+  padding: 10px;
+  height: 40px;
+  width: 460px;}
+
+.memo input[type=date] {
+   border: 1px solid #1B73BA;
+   box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: #333;
+    font-size: 13px;
+    padding: 10px;
+    height: 40px;
+    width: 460px;}
+
+.memo_shudan {
+      padding-bottom: 20px;
+      position: relative;
+      width: 230px;
+    }
+.memo_shudan p {
+      font-size: 14px;
+      padding-bottom: 5px;
+    }
+.memo_btn select {
+      
+      border-top: 1px solid #1B73BA;
+      border-bottom: 1px solid #1B73BA;
+      border-left: 1px solid #1B73BA;
+      border-right:1px solid #1B73BA ;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      cursor: pointer;
+      color: #333;
+      text-indent: .01px;
+      text-overflow: "";
+      padding: 10px;
+      height: 40px;
+      width: 230px;
+    }
+    
+    .memo_btn{
+      margin:0 0 10px;
+    }
+    .memo_btn input[type=submit] {
+      background: url(/stylerecipe_img/arrow_blue02.png) no-repeat;
+      background-position: 10px;
+      border: 2px solid #1B73BA;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      color: #1B73BA;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s ease-in-out;
+      -o-transition: 0.2s ease-in-out;
+      -moz-transition: 0.2s ease-in-out;
+      -webkit-transition: 0.2s ease-in-out;
+      height: 40px;
+      width: 150px;
+    }
+    .memo_btn input[type=submit]:hover {
+      opacity: 0.6;
+    }
