@@ -73,3 +73,37 @@
   .memo_btn input[type=submit]:hover {
     opacity: 0.6;
   }
+
+/* トップページCSS */
+  .msr_btn13{
+    height:53px;
+    padding-top:1px;
+  }
+  .msr_btn13 a{
+    width: 180px;
+    padding:15px;
+    color:#ffffff;
+    font-size: 15px;
+    line-height: 120%;
+    text-align: center;
+    text-decoration: none;
+    background: #1B73BA;
+    display: block;
+    position:relative;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -webkit-box-shadow:4px 4px 0px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow:4px 4px 0px 0px rgba(0,0,0,0.2);
+    box-shadow:4px 4px 0px 0px rgba(0,0,0,0.2);
+    -webkit-transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    -o-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+  }
+  .msr_btn13 a:hover{
+    margin:4px 0 0 4px ;
+    -webkit-box-shadow:0 0 0px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow:0 0 0px 0px rgba(0,0,0,0.2);
+    box-shadow:0 0 0px 0px rgba(0,0,0,0.2);
+  }

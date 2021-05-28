@@ -6,11 +6,10 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>5月分交通費</p>
     <table class="msr_table01">
         <thead>
           <tr>
-            <th></th>
             <th>履歴番号</th>
             <th>日付</th>
             <th>交通手段</th>
@@ -24,93 +23,29 @@
             <th></th>
           </tr>
         </thead>
+        <% for(var i=0;i< results.rowCount;i++) {%>
+        <% var year = results.rows[i].日付.getFullYear(); %>
+        <% var month = results.rows[i].日付.getMonth() + 1; %>
+        <% var day = results.rows[i].日付.getDate(); %>
         <tbody>
           <tr>
-            <th>1</th>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
+            <td>results.rows[i].履歴番号</td>
+            <td>year + '/' + month + '/' + day</td>
+            <td>results.rows[i].交通手段</td>
+            <td>results.rows[i].乗車駅</td>
+            <td>results.rows[i].降車駅</td>
+            <td>results.rows[i].運賃</td>
+            <td>results.rows[i].回数</td>
+            <td>results.rows[i].ジョブ名</td>
+            <td>results.rows[i].メモ</td>
             <td><input type="button" class="memo_btn input" value ="編集"></td>
-            <td><input type="button" class="memo_btn input" value ="追加"></td>
+            <td><input type="button" class="memo_btn input" value ="削除"></td>
           </tr>
-          <tr>
-            <th>2</th>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td><input type="button" value ="編集"></td>
-            <td><input type="button" value ="追加"></td>
-          </tr>
-          <tr>
-            <th>3</th>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td><input type="button" value ="編集"></td>
-            <td><input type="button" value ="追加"></td>
-          </tr>
-          <tr>
-            <th>4</th>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td><input type="button" value ="編集"></td>
-            <td><input type="button" value ="追加"></td>
-          </tr>
-          <tr>
-            <th>5</th>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td><input type="button" value ="編集"></td>
-            <td><input type="button" value ="追加"></td>
-          </tr>
-          <tr>
-            <th>6</th>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td>texttexttexttext</td>
-            <td><input type="button" value ="編集"></td>
-            <td><input type="button" value ="追加"></td>
-          </tr>
-        </tbody>
-    </table>
+          <% } %>
+
+    <section>
+        <br><input type="button" value="トップへ">
+    </section>
     
 
   </body>
