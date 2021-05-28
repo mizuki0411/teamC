@@ -10,7 +10,6 @@ var { Client } = require('pg');
      port: 5432
  })
  
-
 router.post('/', function(request, response, next) {
     var name_str = request.body["name"];
     var mail_str = request.body["mail"];
