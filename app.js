@@ -7,8 +7,12 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var rirekiRouter = require('./routes/rireki');
+<<<<<<< HEAD
+var topRouter = require('./routes/top');
+=======
 var memoRouter = require('./routes/memo');
 var rirekimemoRouter = require('./routes/rireki_memo');
+>>>>>>> 546df7a4b334c7f64955f1c4e6ad179b4c155c2f
 
 var app = express();
 
@@ -25,9 +29,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/rireki', rirekiRouter);
+<<<<<<< HEAD
+app.use('/top', topRouter);
+=======
 app.use('/memo', memoRouter);
 app.use('/rireki_memo', memoRouter);
 
+>>>>>>> 546df7a4b334c7f64955f1c4e6ad179b4c155c2f
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -46,3 +54,31 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+
+var {Client} = require('pg');
+
+var {Client} = require('pg');
+var client = new Client({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'teamc',
+    password: 'Nnkrut1023',
+    port: 5432
+})
+ 
+client.connect()
+
+var query = 'select rireki.id as 履歴番号,rireki.date as 日付,　syudann as 交通手段, jousya as 乗車駅, untin as 運賃, kaisu as 回数, job as ジョブ名;';
+
+app.get('/',(req,res)=>{
+
+    client.query(query,(error,result)=>{
+        console.log(result);
+        res.render('rireki.ejs',{results: result}); // results に格納した取得結果を journal.ejs で表示
+        client.end();
+    });
+
+});
+
+app.listen(3000);
