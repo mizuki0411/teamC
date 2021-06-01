@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <h1 class="msr_h102">交通費履歴ページ</h1>
+    <link rel='stylesheet' href='rireki.css' />
+  </head>
+  <body>
+    <h1>交通費履歴ページ</h1>
+    <p>5月分交通費</p>
+
+    <table class="msr_table01">
+        <thead>
+          <tr>
+            <th>履歴番号</th>
+            <th>日付</th>
+            <th>交通手段</th>
+            <th>乗車駅</th>
+            <th>降車駅</th>
+            <th>運賃</th>
+            <th>回数</th>
+            <th>ジョブ名</th>
+            <th>メモ</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <% for(var i=0; i<rireki.length; i++) { %>
+                <tr>
+                  <td><%= rireki[i].id %></td>
+                  <td><%= rireki[i].date %></td>
+                  <td><%= rireki[i].syudan %></td>
+                  <td><%= rireki[i].jousya %></td>
+                  <td><%= rireki[i].kousya %></td>
+                  <td><%= rireki[i].untin %></td>
+                  <td><%= rireki[i].kaisu %></td>
+                  <td><%= rireki[i].job %></td>
+                  <td><%= rireki[i].memo %></td>
+                  <td><input type="button" class="memo_btn input" value ="編集"></td>
+                  <td><input type="button" class="memo_btn input" value ="削除"></td>
+                </tr>
+        <% } %>
+    </table>
+  </body>
+</html>
