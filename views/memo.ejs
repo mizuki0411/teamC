@@ -11,35 +11,36 @@
   <body>
       <header>
     <h1 class = "msr_h103" >交通費メモ！</h1>
+    <form method="post" action="/memo"></form>
     <form>
         <div class="memo">
             <label>日付</label>
-            <input type="date">
+            <input type="date" name="data">
         </div><br>
 
         <div class="memo_shudan">
             交通手段
             <select name="memo_shudan_1">
               <option value="">選択してください</option>
-              <option value="train">電車</option>
-              <option value="bus">バス</option>
-              <option value="taxi">タクシー</option>
+              <option value="train" name="syudan">電車</option>
+              <option value="bus" name="syudan">バス</option>
+              <option value="taxi" name="syudan">タクシー</option>
             </select>
         </div><br>
 
         <div class="memo">
             <label>乗車駅</label>
-            <input type="text">
+            <input type="text" name="jousya">
         </div>
 
         <div class="memo">
             <label>経由駅</label>
-            <input type="text">
+            <input type="text" >
         </div>
 
         <div class="memo">
             <label>降車駅</label>
-            <input type="text">
+            <input type="text" name="kousya">
         </div>
         
         <p class="memo_btn">
@@ -48,22 +49,22 @@
 
         <div class="memo">
             <label>運賃</label>
-            <input type="text">円
+            <input type="text" name="untin" >円
         </div> 
         
         <div class="memo">
             <label>回数</label>
-            <input type="text">回
+            <input type="text" name="kaisu">回
         </div><br>
 
         <div class="memo">
             <label>ジョブ名</label>
-            <input type="text">
+            <input type="text" name="job">
         </div><br>
 
          <div class="memo">
             <label>メモ</label>
-            <input type="text">
+            <input type="text" name="memo">
         </div><br>
 
         <p class="memo_btn">
