@@ -140,7 +140,7 @@ router.post('/', async (req, res, next)=>{
   var f9 = req.body.koutuuhimemo;
 
   const query = {
-      text: 'INSERT INTO rireki (date, syudan,jousya, keiyu, kousya, untin, kaisu, job, memo) VALUES($1, $2)',
+      text: 'INSERT INTO rireki (date, syudan,jousya, keiyu, kousya, untin, kaisu, job, memo) VALUES($1, $2, $3, $4, $5, $6,$7, $8, $9)',
       values: [f1, f2, f3, f4, f5, f6, f7, f8, f9],
   }
   client.query(query)
