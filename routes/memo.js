@@ -1,16 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var router = express.Router();
-<<<<<<< HEAD
 const request = require('request');
-=======
 const { query } = require('express');
 //var express = require('express');
 //const req = require('express/lib/request');
 //const res = require('express/lib/response');
 const { redirect } = require('express/lib/response');
-var { Client } = require('pg');
->>>>>>> bb4bf04d6c4c069e72358e1c4fb49694863b959f
+/*var { Client } = require('pg');
 
 var client = new Client({
   user: 'postgres',
@@ -19,9 +16,9 @@ var client = new Client({
   password: 'Nnkrut102',
   port: 5432
 });
-client.connect()
+client.connect()*/
 
-// フォーム画面の呼び出し
+//フォーム画面の呼び出し
 router.get('/', async (req, res, next)=>{
   let opt = {
     title: '交通費メモ'
@@ -30,7 +27,7 @@ router.get('/', async (req, res, next)=>{
 });
 
 // データの送信、データベースへの反映
-router.post('/', async (req, res, next)=>{
+/*router.post('/', async (req, res, next)=>{
   //var f1 = req.body.id;
   var f2 = req.body.data;
   var f3 = rep.bady.syudan;
@@ -61,15 +58,7 @@ module.exports = router;
 /* 小嶋さんがもともと書いていたコード 
 router.get('/',function(req,res,next){
    /* let today = req.body.today;*/
-    res.render('memo',opt1);
-});
-
-let opt1 = {
-    title: '交通費メモ'
     
-<<<<<<< HEAD
-};
-
 router.post('/',function(req,res,next){              //フォームに送信された内容を受け取る
 
   let stationname1 = '&viaList=' + req.body.boardingstation +':' + req.body.viastation +':' + req.body.getoffstation + '&conditionDetail=T32212332323191:F3321121120000:A23121141:';
@@ -101,14 +90,15 @@ router.post('/',function(req,res,next){              //フォームに送信さ�
     json: true
 }, function(err, req, data){ 
     let search = []; 
-    /*for (let i = 0; i<search.length; i++){
-       if(search[i].equals("FareSummary")){
-           break;
-       } 
-        search = data.ResultSet.Course[0].Price[i].Oneway;
-   }*/
+    //for (let i = 0; i<search.length; i++){
+      // if(search[i].equals("FareSummary")){
+        //search = data.ResultSet.Course[0].Price[i].kind;
+          // return search;
+     //  } 
+        
+   //}
   
-    search = data.ResultSet.Course[0].Price[2].Oneway;
+   search = data.ResultSet.Course[0].Price[2].Oneway;
   
    
     console.log(search); 
@@ -138,12 +128,4 @@ module.exports = router;
 
 
 
-=======
-let opt = {
-    title: '交通費メモ'
-}
 
-router.get('/', function(req, res, next) {
-  res.render('memo', opt);
-}); */
->>>>>>> bb4bf04d6c4c069e72358e1c4fb49694863b959f

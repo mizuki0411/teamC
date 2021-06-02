@@ -66,11 +66,11 @@
         </div><br>
 
         <p class="memo_btn">
-            <input type="submit" value="登録">　
+            <input type="submit" value="登録" id="btn" onclick="MoveCheck();"">　
         </p>
         <p class="memo_btn">
-        <input type="submit" value="トップへ">
-        </p>
+            <a href="top">トップへ</a>
+          </p>
 
 
 
@@ -82,11 +82,17 @@
     </form>
        
    <script>
-       const btn = document.getElementById('btn');
-    btn.addEventListener('click',function(){
-        alert('正常に登録されました。');
-    });
+      // const btn = document.getElementById('btn');
+    //btn.addEventListener('click',function(){
+      //  alert('正常に登録されました。');
+  //  });
 
+    function MoveCheck(){
+        if(confirm("正常に登録されました。登録した内容を一覧で確認しますか？")){
+            window.location.href = "/top";
+        }
+        
+    }
     </script>
     <footer>
        
