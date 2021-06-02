@@ -10,19 +10,19 @@
 
   <body>
     <h1>交通費メモ</h1>
-    <form method="post" action="/memo">
+    <form method="post" action="/memo/1">
         <div class="memo">
             <label>日付</label>
-            <input type="date" value=<%= data1 %> >
+            <input type="date"  name="today" value= <%= data1 %>>
         </div><br>
 
         <div class="memo_shudan">
             交通手段
             <select name="memo_shudan_1" value=<%= data2 %> >
               <option value="">選択してください</option>
-              <option value="train">電車</option>
-              <option value="bus">バス</option>
-              <option value="taxi">タクシー</option>
+              <option value="train"name="syudan">電車</option>
+              <option value="bus"name="syudan">バス</option>
+              <option value="taxi"name="syudan">タクシー</option>
             </select>
         </div><br>
 
@@ -33,7 +33,7 @@
 
         <div class="memo">
             <label>経由駅</label>
-            <input type="text" value=<%= data8 %>>
+            <input type="text"name="viastation" value=<%= data8 %>>
         </div>
 
         <div class="memo">
@@ -47,8 +47,8 @@
 
         <div class="memo">
             <label>運賃</label>
-            <input type="text" value="<%= data %> ">円 
-        </div> 
+            <input type="text"name="untin" value="<%= data %>" >円 
+        </div>
         
         <div class="memo">
             <label>回数</label>
@@ -57,20 +57,22 @@
 
         <div class="memo">
             <label>ジョブ名</label>
-            <input type="text" value=<%= data6%>>
+            <input type="text"name="job" value=<%= data6%>>
         </div><br>
 
          <div class="memo">
             <label>メモ</label>
-            <input type="text" value=<%= data7%>>
+            <input type="text"name="koutuuhimemo" value=<%= data7%>>
         </div><br>
 
         <p class="memo_btn">
-            <input type="submit" value="登録" id="btn" onclick="MoveCheck();"">　
+            <input type="submit" value="登録" id="btn">　
         </p>
         <p class="memo_btn">
             <a href="top">トップへ</a>
           </p>
+
+          <!-- onclick="MoveCheck() -->
 
 
 
@@ -82,17 +84,17 @@
     </form>
        
    <script>
-      // const btn = document.getElementById('btn');
-    //btn.addEventListener('click',function(){
-      //  alert('正常に登録されました。');
-  //  });
+      const btn = document.getElementById('btn');
+    btn.addEventListener('click',function(){
+       alert('正常に登録されました。');
+   });
 
-    function MoveCheck(){
-        if(confirm("正常に登録されました。登録した内容を一覧で確認しますか？")){
-            window.location.href = "/top";
-        }
+    // function MoveCheck(){
+    //     if(confirm("正常に登録されました。登録した内容を一覧で確認しますか？")){
+    //         window.location.href = "http://localhost:3000/db";
+    //     }
         
-    }
+    // }
     </script>
     <footer>
        
