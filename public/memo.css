@@ -90,3 +90,14 @@
     .memo_btn input[type=submit]:hover {
       opacity: 0.6;
     }
+
+    footer {
+      margin-bottom: 30px;
+      padding: 8px 10px;
+      position: relative;
+      width: 100%;
+      background-color:  #1B73BA;
+    }
+    .footer-text {
+      color: #fff;
+    }

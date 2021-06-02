@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('rireki', { title: '交通費履歴ページ' });
+  res.render('top', { title: 'EX申請補助アプリ' });
 });
 
 module.exports = router;
