@@ -63,6 +63,8 @@
   
   .memo_btn{
     margin:0 0 10px;
+    text-align:center;
+    
   }
   .memo_btn input[type=submit] {
     background: url(/stylerecipe_img/arrow_blue02.png) no-repeat;
@@ -89,6 +91,7 @@
   .msr_btn13{
     height:53px;
     padding-top:1px;
+    text-align:center;
   }
   .msr_btn13 a{
     width: 180px;
@@ -129,13 +132,24 @@
     color: #fff;
   }
   
-  @media screen and(max-width: 480px) {
-    img {
-    border: 0;
-    }
-    }
-@media screen and(min-width: 1280px) {
-    img {
-    border: 1px solid red;
-    }
+@media screen and (min-width: 481px){
+  .memo_btn{
+    width:100%; /*ページ全体の幅は100%と指定する*/	
+    text-align:center; /*ページ全体を中央揃えにする*/
+    margin: 0 auto;
+  }
+    
+  }
+
+@media screen and (max-width: 480px){
+  .memo_btn{
+    width:100%; /*ページ全体の幅は100%と指定する*/	
+    text-align:center; /*ページ全体を中央揃えにする*/
+    margin: 0 auto;
+ }
 }
+
+/* .container{
+  width: 480px;
+  margin: 0 auto;
+} */
