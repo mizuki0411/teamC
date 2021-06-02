@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>更新ページ</title>
+
+<link rel='stylesheet' href="/memo.css">
+  </head>
+
+  <body>
+      <header><h1 class = "msr_h103" >更新ページ</h1>
+        
+    <form method="post" action="/db/edit">
+        <div class="memo">
+            <label>ID</label>
+            <input type="text" id="id" name="id"> 
+        </div><br>
+
+        <div class="memo">
+            <label>日付</label>
+            <input type="date" id="time" name="date"> 
+        </div><br>
+
+        <div class="memo_shudan">
+            <label>交通手段</label>
+            <input type="text" name="syudan">
+        </select>
+        </div>
+        
+        <br>
+
+        <div class="memo">
+            <label>乗車駅</label>
+            <input type="text" name="boardingstation">
+        </div>
+
+        <div class="memo">
+            <label>経由駅</label>
+            <input type="text" name="viastation">
+        </div>
+
+        <div class="memo">
+            <label>降車駅</label>
+            <input type="text" name="getoffstation">
+        </div>
+        
+        <p class="memo_btn">
+            <input type="submit" value="検索">
+        </p><br>
+
+        <div class="memo">
+            <label>運賃</label>
+            <input type="text"name="untin" >円 
+        </div> 
+        
+        <div class="memo">
+            <label>回数</label>
+            <input type="text" name="kaisu">回
+        </div><br>
+
+        <div class="memo">
+            <label>ジョブ名</label>
+            <input type="text" name="job">
+        </div><br>
+
+         <div class="memo">
+            <label>メモ</label>
+            <input type="text" name="memo">
+        </div><br>
+
+        <p class="memo_btn">
+            <input type="submit" value="登録" id="btn">　
+        </p>
+        <p class="memo_btn">
+        <input type="submit" value="トップへ">
+        </p>
+
+
+    </form>
+       
+   <script type="text/javascript">
+    //今日の日時を表示
+    window.onload = function () {
+        //今日の日時を表示
+        var date = new Date();
+
+        var yyyy = date.getFullYear();
+        var mm = ("0"+(date.getMonth()+1)).slice(-2);
+        var nn = ("0"+(date.getMonth()+2)).slice(-2);
+        var dd = ("0"+date.getDate()).slice(-2);
+        
+        document.getElementById("time").value = yyyy + '-' + mm + '-' + dd;
+    }
+
+    const btn = document.getElementById('btn');
+    btn.addEventListener('click',function(){
+        alert('正常に登録されました。');
+    });
+</script>
+     
+    
+    <footer>
+        <p>© All rights reserved by SKYLIGHT.</p>
+    </footer>
+    </header>
+  </body>
+
+</html>
+

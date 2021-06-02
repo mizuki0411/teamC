@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <form method="post" action="/db/add">
+    <div class="form-group">
+        <label for="name">id</label>
+        <input type="text" id="id" name="id"
+            class="form-control"> 
+    </div>
+    <div class="form-group">
+        <label for="mail">name</label>
+        <input type="text" id="name" name="name"
+            class="form-control"> 
+    </div>
+    <div class="form-group">
+    <input type ="submit" class ="btn-primary">
+    </div>
+</form>

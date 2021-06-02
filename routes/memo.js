@@ -55,7 +55,6 @@ router.get('/', async (req, res, next)=>{
 module.exports = router;
 
 
-/* 小嶋さんがもともと書いていたコード 
 router.get('/',function(req,res,next){
    /* let today = req.body.today;*/
     
@@ -117,6 +116,41 @@ router.post('/',function(req,res,next){              //フォームに送信さ�
     
 });
 
+var { Client } = require('pg');
+var client = new Client({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'teamc',
+  password: 'Nnkrut1023',
+  port: 5432
+});
+client.connect()
+
+
+// データの送信、データベースへの反映
+router.post('/', async (req, res, next)=>{
+  var f1 = req.body.today;
+  var f2 = req.body.syudan;
+  var f3 = req.body.boardingstation;
+  var f4 = req.body.viastation;
+  var f5 = req.body.getoffstation;
+  var f6 = req.body.untin;
+  var f7 = req.body.number;
+  var f8 = req.body.job;
+  var f9 = req.body.koutuuhimemo;
+
+  const query = {
+      text: 'INSERT INTO rireki (date, syudan,jousya, keiyu, kousya, untin, kaisu, job, memo) VALUES($1, $2)',
+      values: [f1, f2, f3, f4, f5, f6, f7, f8, f9],
+  }
+  client.query(query)
+  .then(res => {
+      console.log(res)
+  })
+  .catch(e => console.error(e.stack));
+
+  res.redirect('/memo');    
+});
 
 module.exports = router;
 //
@@ -125,7 +159,6 @@ module.exports = router;
     var price = course["Price"]
     var oneway = price["Oneway"]
     var data = data.result.course.price.oneway;*/
-
 
 
 
