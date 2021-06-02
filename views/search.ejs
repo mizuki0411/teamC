@@ -3,22 +3,22 @@
   <head>
     <meta charset="UTF-8">
 
-    <title><%= title %> </title>
+    <title>交通費メモ</title>
 
     <link rel='stylesheet' href="/memo.css">
   </head>
 
   <body>
     <h1>交通費メモ</h1>
-    <form method="post" action="memo">
+    <form method="post" action="/memo">
         <div class="memo">
             <label>日付</label>
-            <input type="date" id="time" name="today"> 
+            <input type="date" value=<%= data1 %> >
         </div><br>
 
         <div class="memo_shudan">
             交通手段
-            <select name="memo_shudan_1">
+            <select name="memo_shudan_1" value=<%= data2 %> >
               <option value="">選択してください</option>
               <option value="train">電車</option>
               <option value="bus">バス</option>
@@ -28,49 +28,50 @@
 
         <div class="memo">
             <label>乗車駅</label>
-            <input type="text" name="boardingstation">
+            <input type="text" name="boardingstation" value="<%= data3 %> ">
         </div>
 
         <div class="memo">
             <label>経由駅</label>
-            <input type="text" name="viastation">
+            <input type="text" value=<%= data8 %>>
         </div>
 
         <div class="memo">
             <label>降車駅</label>
-            <input type="text" name="getoffstation">
+            <input type="text" name="getoffstation" value="<%= data4 %> ">
         </div>
         
-        <p class="memo_btn">
+        <p class="memo_btn1">
             <input type="submit" value="検索">
         </p><br>
 
         <div class="memo">
             <label>運賃</label>
-            <input type="text" >円 
+            <input type="text" value="<%= data %> ">円 
         </div> 
         
         <div class="memo">
             <label>回数</label>
-            <input type="text" name="number">回
+            <input type="text" name="number" value=<%= data5 %> >回
         </div><br>
 
         <div class="memo">
             <label>ジョブ名</label>
-            <input type="text" name="job">
+            <input type="text" value=<%= data6%>>
         </div><br>
 
          <div class="memo">
             <label>メモ</label>
-            <input type="text" name="koutuuhimemo">
+            <input type="text" value=<%= data7%>>
         </div><br>
 
         <p class="memo_btn">
-            <input type="submit" value="登録" id="btn">　
+            <input type="submit" value="登録">　
         </p>
         <p class="memo_btn">
         <input type="submit" value="トップへ">
         </p>
+
 
 
 
@@ -80,27 +81,13 @@
         
     </form>
        
-   <script type="text/javascript">
-    //今日の日時を表示
-    window.onload = function () {
-        //今日の日時を表示
-        var date = new Date();
-
-        var yyyy = date.getFullYear();
-        var mm = ("0"+(date.getMonth()+1)).slice(-2);
-        var nn = ("0"+(date.getMonth()+2)).slice(-2);
-        var dd = ("0"+date.getDate()).slice(-2);
-        
-        document.getElementById("time").value = yyyy + '-' + mm + '-' + dd;
-    }
-
-    const btn = document.getElementById('btn');
+   <script>
+       const btn = document.getElementById('btn');
     btn.addEventListener('click',function(){
         alert('正常に登録されました。');
     });
-</script>
-     
-    
+
+    </script>
     <footer>
        
         </footer>
