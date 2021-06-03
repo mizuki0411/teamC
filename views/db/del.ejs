@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>削除ページ</title>
+    <link rel='stylesheet' href="/memo.css">
 </head>
 <body>
     <header><h1 class = "msr_h103" >削除ページ</h1>
@@ -50,11 +51,11 @@
           <input type="hidden"　name="untin" >円 
       </div> 
       
-      <div class="memo">
-          <label>回数<%= kaisu %></label>
+      <!-- <div class="memo">
+          <label>回数< kaisu %></label>
           <input type="hidden" name="kaisu">回
       </div><br>
-
+ -->
       <div class="memo">
           <label>ジョブ名<%= job %></label>
           <input type="hidden" name="job">
@@ -71,27 +72,6 @@
 
   </form>
      
-<!--  <script type="text/javascript">
-  //今日の日時を表示
-  window.onload = function () {
-      //今日の日時を表示
-      var date = new Date();
-
-      var yyyy = date.getFullYear();
-      var mm = ("0"+(date.getMonth()+1)).slice(-2);
-      var nn = ("0"+(date.getMonth()+2)).slice(-2);
-      var dd = ("0"+date.getDate()).slice(-2);
-      
-      document.getElementById("time").value = yyyy + '-' + mm + '-' + dd;
-  }
-
-  const btn = document.getElementById('btn');
-  btn.addEventListener('click',function(){
-      alert('正常に登録されました。');
-  });
-</script> -->
-   
-  
   <footer>
       <p>© All rights reserved by SKYLIGHT.</p>
   </footer>

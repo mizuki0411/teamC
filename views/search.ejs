@@ -19,10 +19,7 @@
         <div class="memo_shudan">
             交通手段
             <select name="memo_shudan_1" value=<%= data2 %> >
-              <option value="">選択してください</option>
-              <option value="train"name="syudan">電車</option>
-              <option value="bus"name="syudan">バス</option>
-              <option value="taxi"name="syudan">タクシー</option>
+              <input type="text" name="syudan" value="<%= data2 %>" >
             </select>
         </div><br>
 
@@ -50,11 +47,11 @@
             <input type="text"name="untin" value="<%= data %>" >円 
         </div>
         
-        <div class="memo">
+        <!-- div class="memo">
             <label>回数</label>
             <input type="text" name="number" value=<%= data5 %> >回
         </div><br>
-
+ -->
         <div class="memo">
             <label>ジョブ名</label>
             <input type="text"name="job" value=<%= data6%>>
