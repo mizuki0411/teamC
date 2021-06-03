@@ -5,6 +5,8 @@ const res = require('express/lib/response');
 const { redirect } = require('express/lib/response');
 var router = express.Router();
 var { Client } = require('pg');
+// require('dotenv').config();
+// const dbpassword = process.env.DBPW
 //const bodyParser = require('body-parser')
 //const { decycle, encycle } = require('json-cyclic');
 

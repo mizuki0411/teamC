@@ -5,22 +5,25 @@
     <link rel='stylesheet' href='rireki.css' />
   </head>
   <body>
-    <h1>交通費履歴ページ</h1>
-    <p>5月分交通費</p>
+    <div class = "memo_btn">
+    <h1>5月分交通費</h1>
+    <!-- <div class="memo"> -->
     <form method="post" action="/db/edit">
       <label for="name">編集したいIDを入力</label>
       <input type="text" id="id" name="id"
               class="form-control">
-      <input type ="submit"  value="編集画面へ">
+      <input type ="submit" value="編集画面へ">
     </form>
-    </div>
-    <div class="form-group">
+    
+    <!-- <div class="form-group"> -->
       <form method="post" action="/db/del">
       <label for="name">削除したいIDを入力</label>
       <input type="text" id="id" name="id"
               class="form-control">
       <input type ="submit"  value="削除画面へ">
-    </form>
+    </form><br>
+    <!-- </div> -->
+    <!-- </div> -->
     </div>
     <table class="msr_table01">
         <thead>
@@ -35,8 +38,6 @@
             <!-- <th>回数</th>-->            
             <th>ジョブ名</th>
             <th>メモ</th>
-            <th></th>
-            <th></th>
           </tr>
         </thead>
         <% for(var i=0; i<rireki.length; i++) { %>
