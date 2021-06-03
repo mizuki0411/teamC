@@ -10,20 +10,19 @@
   <body>
       <header><h1 class = "msr_h103" >更新ページ</h1>
         
-    <form method="post" action="/db/edit">
+    <form method="post" action="/db/edit/1">
         <div class="memo">
-            <label>ID</label>
-            <input type="text" id="id" name="id"> 
-        </div><br>
+            <label>ID= <%= id %> </label>
+            <input type = "hidden" name = "id" value="<%= id %>">
 
         <div class="memo">
             <label>日付</label>
-            <input type="date" id="time" name="date"> 
+            <input type="date" id="time" name="date" value="<%= date %>"> 
         </div><br>
 
         <div class="memo_shudan">
             <label>交通手段</label>
-            <input type="text" name="syudan">
+            <input type="text" name="syudan" value="<%= syudan %>">
         </select>
         </div>
         
@@ -31,17 +30,17 @@
 
         <div class="memo">
             <label>乗車駅</label>
-            <input type="text" name="boardingstation">
+            <input type="text" name="boardingstation" value="<%= boardingstation %>" >
         </div>
 
         <div class="memo">
             <label>経由駅</label>
-            <input type="text" name="viastation">
+            <input type="text" name="viastation" value="<%= viastation %>">
         </div>
 
         <div class="memo">
             <label>降車駅</label>
-            <input type="text" name="getoffstation">
+            <input type="text" name="getoffstation" value="<%= getoffstation %>">
         </div>
         
         <p class="memo_btn">
@@ -50,31 +49,31 @@
 
         <div class="memo">
             <label>運賃</label>
-            <input type="text"name="untin" >円 
+            <input type="text"name="untin" value="<%= untin %>">円 
         </div> 
         
         <div class="memo">
             <label>回数</label>
-            <input type="text" name="kaisu">回
+            <input type="text" name="kaisu" value="<%= kaisu %>">回
         </div><br>
 
         <div class="memo">
             <label>ジョブ名</label>
-            <input type="text" name="job">
+            <input type="text" name="job" value="<%= job %>">
         </div><br>
 
          <div class="memo">
             <label>メモ</label>
-            <input type="text" name="memo">
+            <input type="text" name="memo" value="<%= memo %>">
         </div><br>
 
         <p class="memo_btn">
             <input type="submit" value="登録" id="btn">　
         </p>
-        <p class="memo_btn">
+       <!--  <p class="memo_btn">
         <input type="submit" value="トップへ">
         </p>
-
+ -->
 
     </form>
        
@@ -92,10 +91,10 @@
         document.getElementById("time").value = yyyy + '-' + mm + '-' + dd;
     }
 
-    const btn = document.getElementById('btn');
+    /* const btn = document.getElementById('btn');
     btn.addEventListener('click',function(){
         alert('正常に登録されました。');
-    });
+    }); */
 </script>
      
     

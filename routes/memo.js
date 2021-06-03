@@ -1,11 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var router = express.Router();
 const request = require('request');
 const { query } = require('express');
-//var express = require('express');
-//const req = require('express/lib/request');
-//const res = require('express/lib/response');
+const req = require('express/lib/request');
+const res = require('express/lib/response');
 const { redirect } = require('express/lib/response');
 /*var { Client } = require('pg');
 
@@ -121,14 +119,14 @@ var client = new Client({
   user: 'postgres',
   host: 'localhost',
   database: 'teamc',
-  password: 'Nnkrut1023',
+  password: 'skylight2021',
   port: 5432
 });
 client.connect()
 
 
-// データの送信、データベースへの反映
-router.post('/memo', async (req, res, next)=>{
+// データの受け取り、データベースへの反映
+router.post('/1', async (req, res, next)=>{
   var f1 = req.body.today;
   var f2 = req.body.syudan;
   var f3 = req.body.boardingstation;

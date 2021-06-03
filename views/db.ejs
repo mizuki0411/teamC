@@ -32,6 +32,7 @@
             <th>日付</th>
             <th>交通手段</th>
             <th>乗車駅</th>
+            <th>経由地</th>
             <th>降車駅</th>
             <th>運賃</th>
             <th>回数</th>
@@ -45,11 +46,14 @@
                   <td><%= rireki[i].date %></td>
                   <td><%= rireki[i].syudan %></td>
                   <td><%= rireki[i].jousya %></td>
+                  <td><%= rireki[i].keiyu %></td>
                   <td><%= rireki[i].kousya %></td>
                   <td><%= rireki[i].untin %></td>
                   <td><%= rireki[i].kaisu %></td>
                   <td><%= rireki[i].job %></td>
                   <td><%= rireki[i].memo %></td>
+                  <!-- <td><input type="button" class="memo_btn input" value ="編集"></td>
+                  <td><input type="button" class="memo_btn input" value ="削除"></td> -->
                 </tr>
         <% } %>
     </table>

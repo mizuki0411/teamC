@@ -5,23 +5,9 @@
     <title>削除ページ</title>
 </head>
 <body>
-    <p class="h5">Delete　ID = <%= id %></p>
-    <form method="post" action="/db/del">
-        <input type = "hidden" name = "id" value="<%= id %>">
-        <ul class ='list-group mb-3'>
-            <li class="list-group-item">NAME: <%= name %></li>
-        </ul>
-    
-        <div class="form-group">
-        <input type ="submit" class ="btn-primary" value="削除">
-        </div>
-    </form>
-</body>
-</html>
-<body>
-    <header><h1 class = "msr_h103" >更新ページ</h1>
-      
-  <form method="post" action="/db/del">
+    <header><h1 class = "msr_h103" >削除ページ</h1>
+
+  <form method="post" action="/db/del/1">
       <div class="memo">
         <p class="h5">Delete　ID = <%= id %></p>
         <input type = "hidden" name = "id" value="<%= id %>">
@@ -29,12 +15,12 @@
 
       <div class="memo">
           <label>日付 <%= date %></label>
-          <input type="date" id="time" name="date"> 
+          <input type="hidden" id="time" name="date"> 
       </div><br>
 
       <div class="memo_shudan">
           <label>交通手段<%= syudan %></label>
-          <input type="text" name="syudan">
+          <input type="hidden" name="syudan">
       </select>
       </div>
       
@@ -42,17 +28,17 @@
 
       <div class="memo">
           <label>乗車駅 <%= boardingstation %></label>
-          <input type="text" name="boardingstation">
+          <input type="hidden" name="boardingstation">
       </div>
 
       <div class="memo">
           <label>経由駅 <%= viastation %></label>
-          <input type="text" name="viastation">
+          <input type="hidden" name="viastation">
       </div>
 
       <div class="memo">
           <label>降車駅 <%= getoffstation %></label>
-          <input type="text" name="getoffstation">
+          <input type="hidden" name="getoffstation">
       </div>
       
       <p class="memo_btn">
@@ -61,35 +47,31 @@
 
       <div class="memo">
           <label>運賃 <%= untin %></label>
-          <input type="text"name="untin" >円 
+          <input type="hidden"　name="untin" >円 
       </div> 
       
       <div class="memo">
           <label>回数<%= kaisu %></label>
-          <input type="text" name="kaisu">回
+          <input type="hidden" name="kaisu">回
       </div><br>
 
       <div class="memo">
           <label>ジョブ名<%= job %></label>
-          <input type="text" name="job">
+          <input type="hidden" name="job">
       </div><br>
 
        <div class="memo">
           <label>メモ<%= memo %></label>
-          <input type="text" name="memo">
+          <input type="hidden" name="memo">
       </div><br>
 
-      <p class="memo_btn">
-          <input type="submit" value="登録" id="btn">　
-      </p>
-      <p class="memo_btn">
-      <input type="submit" value="トップへ">
-      </p>
-
+      <div class="form-group">
+        <input type ="submit" class ="btn-primary" value="削除">
+        </div>
 
   </form>
      
- <script type="text/javascript">
+<!--  <script type="text/javascript">
   //今日の日時を表示
   window.onload = function () {
       //今日の日時を表示
@@ -107,7 +89,7 @@
   btn.addEventListener('click',function(){
       alert('正常に登録されました。');
   });
-</script>
+</script> -->
    
   
   <footer>
