@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>削除ページ</title>
+    <link rel='stylesheet' href='/memo.css' />
 </head>
 <body>
     <header><h1 class = "msr_h103" >削除ページ</h1>
@@ -14,31 +15,31 @@
       </div><br>
 
       <div class="memo">
-          <label>日付 <%= date %></label>
-          <input type="hidden" id="time" name="date"> 
+          <label>日付</label>
+          <input type="date" id="time" name="date" value=" <%= date %>"> 
       </div><br>
 
       <div class="memo_shudan">
-          <label>交通手段<%= syudan %></label>
-          <input type="hidden" name="syudan">
+          <label>交通手段</label>
+          <input type="text" name="syudan" value="<%= syudan %>">
       </select>
       </div>
       
       <br>
 
       <div class="memo">
-          <label>乗車駅 <%= boardingstation %></label>
-          <input type="hidden" name="boardingstation">
+          <label>乗車駅</label>
+          <input type="text" name="boardingstation" value=" <%= boardingstation %>">
       </div>
 
       <div class="memo">
-          <label>経由駅 <%= viastation %></label>
-          <input type="hidden" name="viastation">
+          <label>経由駅</label>
+          <input type="text" name="viastation" value=" <%= viastation %>">
       </div>
 
       <div class="memo">
-          <label>降車駅 <%= getoffstation %></label>
-          <input type="hidden" name="getoffstation">
+          <label>降車駅</label>
+          <input type="text" name="getoffstation" value=" <%= getoffstation %>">
       </div>
       
       <p class="memo_btn">
@@ -46,23 +47,23 @@
       </p><br>
 
       <div class="memo">
-          <label>運賃 <%= untin %></label>
-          <input type="hidden"　name="untin" >円 
+          <label>運賃</label>
+          <input type="text"　name="untin" value=" <%= untin %>">円 
       </div> 
       
       <div class="memo">
-          <label>回数<%= kaisu %></label>
-          <input type="hidden" name="kaisu">回
+          <label>回数</label>
+          <input type="text" name="kaisu" value="<%= kaisu %>">回
       </div><br>
 
       <div class="memo">
-          <label>ジョブ名<%= job %></label>
-          <input type="hidden" name="job">
+          <label>ジョブ名</label>
+          <input type="text" name="job" value="<%= job %>">
       </div><br>
 
        <div class="memo">
-          <label>メモ<%= memo %></label>
-          <input type="hidden" name="memo">
+          <label>メモ</label>
+          <input type="text" name="memo" value="<%= memo %>">
       </div><br>
 
       <div class="form-group">

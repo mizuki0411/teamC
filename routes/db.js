@@ -44,14 +44,29 @@ var client = new Client({
   user: 'postgres',
   host: 'localhost',
   database: 'teamc',
-  password: 'skylight2021',
+  password: 'Nnkrut1023',
   port: 5432
 });
 client.connect()
 
 //データベースの情報をブラウザへ出力する処理
+// router.get('/', async (req, res, next)=>{
+//   client.query('SELECT * FROM team', function (err, result) {
+//       let rireki = result.rows
+//     for(let i = 0; i <= result.rows; i++){
+//       rireki.push(result.rows[i])
+//     }
+//     let opt = {
+//       rireki:rireki,
+//     }
+//     res.render('db',opt);
+//     //console.log(rireki); 
+//   });
+// }
+// );
+
 router.get('/', async (req, res, next)=>{
-  client.query('SELECT * FROM team', function (err, result) {
+  client.query('SELECT * FROM rireki', function (err, result) {
       let rireki = result.rows
     for(let i = 0; i <= result.rows; i++){
       rireki.push(result.rows[i])
@@ -93,20 +108,48 @@ router.post('/add', async (req, res, next)=>{
  */
  
 // 更新フォームにデータを呼び出し
-router.post('/edit', async (req, res, next)=>{
-let id = [req.body.id];
-  console.log(id)
+// router.post('/edit', async (req, res, next)=>{
+// let id = [req.body.id];
+//   console.log(id)
 
-    client.query( { text: "select * from team where id = any($1::integer[])", values: [ id ] }, 
-function( err, result ){
-    if( err ){
-    console.log( 'error', err );
-    }else{
-    //console.log( result );
-    //console.log(Object.keys(result));
-    //console.log(result.rows[0].id);
-    //console.log(result.rows[0].name);
-};
+//     client.query( { text: "select * from team where id = any($1::integer[])", values: [ id ] }, 
+// function( err, result ){
+//     if( err ){
+//     console.log( 'error', err );
+//     }else{
+//     //console.log( result );
+//     //console.log(Object.keys(result));
+//     //console.log(result.rows[0].id);
+//     //console.log(result.rows[0].name);
+// };
+// router.post('/edit', async (req, res, next)=>{
+//   let id = [req.body.id];
+//     console.log(id)
+  
+//       client.query( { text: "select * from team where id = any($1::integer[])", values: [ id ] }, 
+//   function( err, result ){
+//       if( err ){
+//       console.log( 'error', err );
+//       }else{
+//       //console.log( result );
+//       //console.log(Object.keys(result));
+//       //console.log(result.rows[0].id);
+//       //console.log(result.rows[0].name);
+//   };
+router.post('/edit', async (req, res, next)=>{
+  let id = [req.body.id];
+    console.log(id)
+  
+      client.query( { text: "select * from rireki where id = any($1::integer[])", values: [ id ] }, 
+  function( err, result ){
+      if( err ){
+      console.log( 'error', err );
+      }else{
+      //console.log( result );
+      //console.log(Object.keys(result));
+      //console.log(result.rows[0].id);
+      //console.log(result.rows[0].name);
+  };
     let id = result.rows[0].id
     let date = result.rows[0].date
     let syudan = result.rows[0].syudan
@@ -146,8 +189,10 @@ let kaisu = req.body.kaisu;
 let job = req.body.job;
 let memo = req.body.memo;
 
+// const sql = 
+//   "UPDATE team set memo='"+ memo +"' job='"+ job +"' kaisu= '"+ kaisu +"' untin= '"+ untin +"' kousya='"+ kousya +"' keiyu= '"+ keiyu +"' jousya='"+ jousya +"' syudan='"+ syudan +"' date = '"+ date +"' where id=" + id;
 const sql = 
-  "UPDATE teamc set memo='"+ memo +"' job='"+ job +"' kaisu= '"+ kaisu +"' untin= '"+ untin +"' kousya='"+ kousya +"' keiyu= '"+ keiyu +"' jousya='"+ jousya +"' syudan='"+ syudan +"' date = '"+ date +"' where id=" + id;
+  "UPDATE rireki set memo='"+ memo +"' job='"+ job +"' kaisu= '"+ kaisu +"' untin= '"+ untin +"' kousya='"+ kousya /*+"' keiyu= '"*/+ keiyu +"' jousya='"+ jousya +"' syudan='"+ syudan +"' date = '"+ date +"' where id=" + id;
 
 client.query(sql)
   .then(result => {
@@ -168,7 +213,12 @@ client.query(sql)
   let id = [req.body.id];
     console.log(id)
   
-      client.query( { text: "select * from team where id = any($1::integer[])", values: [ id ] }, 
+  //     client.query( { text: "select * from team where id = any($1::integer[])", values: [ id ] }, 
+  // function( err, result ){
+  //     if( err ){
+  //     console.log( 'error', err );
+  //     }else{
+    client.query( { text: "select * from rireki where id = any($1::integer[])", values: [ id ] }, 
   function( err, result ){
       if( err ){
       console.log( 'error', err );
@@ -205,9 +255,19 @@ client.query(sql)
   });
 
 // DBから情報を削除
+// router.post('/del/1', async (req, res, next) =>{
+//   let id = [req.body.id];
+//   const sql = "delete from team where id=" + id;
+
+//   client.query(sql, (err, result) => {
+//       console.log(result)
+//   });
+//      res.redirect('/db');
+// }); 
+// });
 router.post('/del/1', async (req, res, next) =>{
   let id = [req.body.id];
-  const sql = "delete from team where id=" + id;
+  const sql = "delete from rireki where id=" + id;
 
   client.query(sql, (err, result) => {
       console.log(result)

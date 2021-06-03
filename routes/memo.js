@@ -86,21 +86,20 @@ router.post('/',function(req,res,next){              //フォームに送信さ�
    },
     json: true
 }, function(err, req, data){ 
-    let search = []; 
-    //for (let i = 0; i<search.length; i++){
-      // if(search[i].equals("FareSummary")){
-        //search = data.ResultSet.Course[0].Price[i].kind;
-          // return search;
-     //  } 
-        
-   //}
+    //let search = []; 
+    var index = 0
+    for (let i = 0; i<10; i++){
+       if(data.ResultSet.Course[0].Price[i].kind === "FareSummary"){
+        console.log(data.ResultSet.Course[0].Price[i].kind)
+        index += i
+      break}}
   
-   search = data.ResultSet.Course[0].Price[2].Oneway;
+   //search = data.ResultSet.Course[0].Price[2].Oneway;
   
    
-    console.log(search); 
+    //console.log(search); 
     let opt2 = {
-        data:search,
+        data:data.ResultSet.Course[0].Price[index].Oneway,
         data1:memodata1,
         data2:memodata2,
         data3:memodata3,
@@ -119,7 +118,7 @@ var client = new Client({
   user: 'postgres',
   host: 'localhost',
   database: 'teamc',
-  password: 'skylight2021',
+  password: 'Nnkrut1023',
   port: 5432
 });
 client.connect()
