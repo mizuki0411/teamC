@@ -190,25 +190,23 @@ let job = req.body.job;
 let memo = req.body.memo;
 
 // const sql = 
-//   "UPDATE team set memo='"+ memo +"' job='"+ job +"' kaisu= '"+ kaisu +"' untin= '"+ untin +"' kousya='"+ kousya +"' keiyu= '"+ keiyu +"' jousya='"+ jousya +"' syudan='"+ syudan +"' date = '"+ date +"' where id=" + id;
-const sql = 
-  "UPDATE rireki set memo='"+ memo +"' job='"+ job +"' kaisu= '"+ kaisu +"' untin= '"+ untin +"' kousya='"+ kousya /*+"' keiyu= '"*/+ keiyu +"' jousya='"+ jousya +"' syudan='"+ syudan +"' date = '"+ date +"' where id=" + id;
-console.log(id)
-/* console.log(date)
-console.log(syudan)
-console.log(jousya)
-console.log(keiyu)
-console.log(kousya)
-console.log(untin)
-console.log(kaisu)
-console.log(job)
- */
-console.log(memo)
+//   "UPDATE rireki set memo='"+ memo +"' job='"+ job +"' kaisu= '"+ kaisu +"' untin= '"+ untin +"' kousya='"+ kousya /*+"' keiyu= '"*/+ keiyu +"' jousya='"+ jousya +"' syudan='"+ syudan +"' date = '"+ date +"' where id=" + id;
+// console.log(id)
+// /* console.log(date)
+// console.log(syudan)
+// console.log(jousya)
+// console.log(keiyu)
+// console.log(kousya)
+// console.log(untin)
+// console.log(kaisu)
+// console.log(job)
+//  */
+// console.log(memo)
 
 const sql = 
   //"UPDATE team set memo='"+ memo +"' job='"+ job +"' kaisu= '"+ kaisu +"' untin= '"+ untin +"' kousya='"+ kousya +"' keiyu= '"+ keiyu +"' jousya='"+ jousya +"' syudan='"+ syudan +"' date = '"+ date +"' where id=" + id;
   //"UPDATE team set date='"+ date +"' syudan='"+ syudan +"' jousya '"+ jousya +"' keiyu= '"+ keiyu +"' +kousya= '"+ kousya +"' untin='"+ untin +"' kaisu= '"+ kaisu +"' job='"+ job +"' memo='"+ memo +"' where id=" + id;
-  "UPDATE team set  memo='"+ memo +"' where id=" + id;
+  "UPDATE rireki set  memo='"+ memo +"' where id=" + id;
   
   client.query(sql)
   .then(result => {
@@ -267,6 +265,7 @@ const sql =
           job: job,
           memo:memo,
       }
+      console.log(date);
       res.render('db/del',opt); 
   });
 
