@@ -14,7 +14,7 @@
         <div class="memo">
             <label>日付</label>
             <input type="date" id="time" name="today"> 
-        </div><br>
+        </div>
 
         <div class="memo_shudan">
             交通手段
@@ -24,7 +24,7 @@
               <option value="bus" name="syudan">バス</option>
               <option value="taxi" name="syudan">タクシー</option>
             </select>
-        </div><br>
+        </div>
 
         <div class="memo">
             <label>乗車駅</label>
@@ -47,34 +47,38 @@
 
         <div class="memo">
             <label>運賃</label>
-            <input type="text" >円 
+            <input type="text" name="untin">円 
         </div> 
         
         <div class="memo">
             <label>回数</label>
             <input type="text" name="number">回
-        </div><br>
+        </div>
 
         <div class="memo">
             <label>ジョブ名</label>
             <input type="text" name="job">
-        </div><br>
+        </div>
 
          <div class="memo">
             <label>メモ</label>
             <input type="text" name="koutuuhimemo">
-        </div><br>
+        </div>
 
         <p class="memo_btn">
             <input type="submit" value="登録" id="btn" onclick="MoveCheck();">　
-        </p>
+        </p><br><br>
        
+<!-- 
+        <button type=“button” class="memo2_btn" onclick="location.href='/top'">トップページへ</button><br>
+        <button type=“button” class="memo2_btn" onclick="location.href='http://localhost:3000/db'">交通費履歴ページ</button>
 
+        <input type="button"  value="トップへ"　onClick="location.href='http://google.com'">
+        <button type=“button” onclick="location.href='/top'">遷移！</button> -->
+        
         <p class="memo_btn">
             <a href="top">トップへ</a>
           </p>
-
-
         
 
         
@@ -98,7 +102,7 @@
     btn.addEventListener('click',function(){
         alert('正常に登録されました。');
     });
-</script>
+    </script>
      
     
     <footer>

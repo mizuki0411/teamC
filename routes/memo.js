@@ -128,7 +128,7 @@ client.connect()
 
 
 // データの送信、データベースへの反映
-router.post('/', async (req, res, next)=>{
+router.post('/memo', async (req, res, next)=>{
   var f1 = req.body.today;
   var f2 = req.body.syudan;
   var f3 = req.body.boardingstation;
@@ -149,7 +149,7 @@ router.post('/', async (req, res, next)=>{
   })
   .catch(e => console.error(e.stack));
 
-  res.redirect('/memo');    
+  res.redirect('/');    
 });
 
 module.exports = router;

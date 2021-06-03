@@ -1,3 +1,14 @@
+.msr_h102 {
+  background: #1B73BA;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-size: 30px;
+  margin-bottom: 30px;
+  padding: 8px 10px;
+  position: relative;
+  width: 100%;
+}
+
 .msr_h103 {
   background: #1B73BA;
   box-sizing: border-box;
@@ -11,7 +22,9 @@
 
 .memo {
   padding-bottom: 20px;
-  width: 460px;
+  width:100%; /*ページ全体の幅は100%と指定する*/	
+  text-align:center; /*ページ全体を中央揃えにする*/
+  margin: 0 auto;
 }
 .memo  label {
   display: block;
@@ -43,7 +56,9 @@
 .memo_shudan {
       padding-bottom: 20px;
       position: relative;
-      width: 230px;
+      width:100%; /*ページ全体の幅は100%と指定する*/	
+      text-align:center; /*ページ全体を中央揃えにする*/
+      margin: 0 auto;
     }
 .memo_shudan p {
       font-size: 14px;
@@ -68,7 +83,10 @@
     }
     
     .memo_btn{
-      margin:0 0 10px;
+      text-align: center;
+      width:100%; /*ページ全体の幅は100%と指定する*/	
+      text-align:center; /*ページ全体を中央揃えにする*/
+      margin: 0 auto;
     }
     .memo_btn input[type=submit] {
       background: url(/stylerecipe_img/arrow_blue02.png) no-repeat;
@@ -101,3 +119,40 @@
     .footer-text {
       color: #fff;
     }
+
+    .memo2_btn{
+      background: url(/stylerecipe_img/arrow_blue02.png) no-repeat;
+      background-position: 10px;
+      border: 2px solid #1B73BA;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      color: #1B73BA;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s ease-in-out;
+      -o-transition: 0.2s ease-in-out;
+      -moz-transition: 0.2s ease-in-out;
+      -webkit-transition: 0.2s ease-in-out;
+      height: 40px;
+      width: 250px;
+      text-align:center; /*ページ全体を中央揃えにする*/
+      margin: 0 auto;
+      }
+
+      @media screen and (min-width: 481px){
+        .all{
+          width:100%; /*ページ全体の幅は100%と指定する*/	
+          text-align:center; /*ページ全体を中央揃えにする*/
+          margin: 0 auto;
+        }
+          
+        }
+      
+      @media screen and (max-width: 480px){
+        .all{
+          width:100%; /*ページ全体の幅は100%と指定する*/	
+          text-align:center; /*ページ全体を中央揃えにする*/
+          margin: 0 auto;
+       }
+      }

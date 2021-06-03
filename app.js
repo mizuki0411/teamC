@@ -5,9 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// var usersRouter = require('./routes/users');
 // var rirekiRouter = require('./routes/rireki');
-//var dbRouter = require('./routes/db');
+var dbRouter = require('./routes/db');
 var topRouter = require('./routes/top');
 var memoRouter = require('./routes/memo');
 //var rirekimemoRouter = require('./routes/rireki_memo');
@@ -25,12 +25,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/users', usersRouter);
 // app.use('/rireki', rirekiRouter);
-//app.use('/db', dbRouter);
+app.use('/db', dbRouter);
 app.use('/top', topRouter);
 app.use('/memo', memoRouter);
 //app.use('/rireki_memo', rirekimemoRouter);
+// app.use('/search', memoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
