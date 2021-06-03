@@ -44,7 +44,7 @@ var client = new Client({
   user: 'postgres',
   host: 'localhost',
   database: 'teamc',
-  password: 'Nnkrut1023',
+  password: 'skylight2021',
   port: 5432
 });
 client.connect()
@@ -66,7 +66,7 @@ client.connect()
 // );
 
 router.get('/', async (req, res, next)=>{
-  client.query('SELECT * FROM rireki', function (err, result) {
+  client.query('SELECT * FROM team', function (err, result) {
       let rireki = result.rows
     for(let i = 0; i <= result.rows; i++){
       rireki.push(result.rows[i])
@@ -140,7 +140,7 @@ router.post('/edit', async (req, res, next)=>{
   let id = [req.body.id];
     console.log(id)
   
-      client.query( { text: "select * from rireki where id = any($1::integer[])", values: [ id ] }, 
+      client.query( { text: "select * from team where id = any($1::integer[])", values: [ id ] }, 
   function( err, result ){
       if( err ){
       console.log( 'error', err );
@@ -206,7 +206,7 @@ let memo = req.body.memo;
 const sql = 
   //"UPDATE team set memo='"+ memo +"' job='"+ job +"' kaisu= '"+ kaisu +"' untin= '"+ untin +"' kousya='"+ kousya +"' keiyu= '"+ keiyu +"' jousya='"+ jousya +"' syudan='"+ syudan +"' date = '"+ date +"' where id=" + id;
   //"UPDATE team set date='"+ date +"' syudan='"+ syudan +"' jousya '"+ jousya +"' keiyu= '"+ keiyu +"' +kousya= '"+ kousya +"' untin='"+ untin +"' kaisu= '"+ kaisu +"' job='"+ job +"' memo='"+ memo +"' where id=" + id;
-  "UPDATE rireki set  memo='"+ memo +"' where id=" + id;
+  "UPDATE team set  memo='"+ memo +"' where id=" + id;
   
   client.query(sql)
   .then(result => {
@@ -232,7 +232,7 @@ const sql =
   //     if( err ){
   //     console.log( 'error', err );
   //     }else{
-    client.query( { text: "select * from rireki where id = any($1::integer[])", values: [ id ] }, 
+    client.query( { text: "select * from team where id = any($1::integer[])", values: [ id ] }, 
   function( err, result ){
       if( err ){
       console.log( 'error', err );
@@ -282,7 +282,7 @@ const sql =
 // });
 router.post('/del/1', async (req, res, next) =>{
   let id = [req.body.id];
-  const sql = "delete from rireki where id=" + id;
+  const sql = "delete from team where id=" + id;
 
   client.query(sql, (err, result) => {
       console.log(result)

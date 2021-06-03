@@ -118,7 +118,7 @@ var client = new Client({
   user: 'postgres',
   host: 'localhost',
   database: 'teamc',
-  password: 'Nnkrut1023',
+  password: 'skylight2021',
   port: 5432
 });
 client.connect()
